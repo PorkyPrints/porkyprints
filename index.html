@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Porky Prints IE</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="Porky Prints Logo">
+      <h1>Porky Prints</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="posters.html">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Posters For All!</h2>
+    <p>We’re a Transition Year mini company making affordable, interesting and beautiful posters for students & staff at St. Declan's College. You can choose to buy one of the posters from our Gallery, or simply request your own! [PRICING NOT CONSIDERED YET]</p>
+  </section>
+
+  <section class="featured-posters">
+    <h2>Our Posters</h2>
+    <div class="poster-grid">
+      <img src="images/poster1.jpg" alt="Poster 1">
+      <img src="images/poster2.jpg" alt="Poster 2">
+      <img src="images/poster3.jpg" alt="Poster 3">
+    </div>
+    <a href="./posters" class="see-all">See All →</a>
+  </section>
+
+
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>Porky Prints is a Transition Year mini company, ran by Luka Parkes, Ruaidhri McCool and Patrick Redmond. We have some premade posters, or you can commission us to create anything you want! For teachers, that could be a poster explaining, for example, Pascal's Triangle. For students, we could create a poster about an interest of yours!</p>
+  </section>
+
+  <section class="socials">
+    <h2>Follow Us</h2>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/porkyprintsie/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@porkyprints" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form action="mailto:porkyprintsie@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email (School-Assigned Email If Possible)" required />
+      <input type="text" name="class" placeholder="Your Class (If you attend St. Declans. For example, 4C)" />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Porky Prints</p>
+  </footer>
+
+</body>
+</html>
