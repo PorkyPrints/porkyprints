@@ -20,7 +20,6 @@
       <a href="https://porkyprints.com">Home</a>
       <a href="#pricing">Pricing</a>
       <a href="posters">Gallery</a>
-      <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -74,6 +73,10 @@
       <input type="email" name="reply_to" placeholder="Your Email (School-Assigned Email If Possible)" required />
       <input type="text" name="student_class" placeholder="Your Class (If you attend St. Declans. For example, 4C)" />
       <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <label class="consent-label">
+          <input type="checkbox" id="gdpr-consent" required>
+          <small>I consent to having this website store my submitted information so my message can be answered.</small>
+      </label></br></br>
       <button
           class="g-recaptcha"
           data-sitekey="6LeMtfsrAAAAADMBHnf1-vdWDjXT2sivXUaYKvUm"
@@ -82,6 +85,15 @@
           type="submit">
           Send Message
       </button>
+
+      <small>
+          This site is protected by reCAPTCHA and the Google
+          <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and
+          <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.
+
+          Our <a href="privacy" target="_blank">Privacy Policy</a> and
+          <a href="terms" target="_blank">Terms of Service</a> also apply.
+      </small>
     </form>
   </section>
 

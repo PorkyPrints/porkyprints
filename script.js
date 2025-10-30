@@ -62,6 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("contact-form");
     form.addEventListener("submit", (e) => {
         e.preventDefault();
+        // GDPR consent check
+        const consent = document.getElementById("gdpr-consent");
+        if (!consent.checked) {
+            alert("Please confirm that you consent to data processing before sending.");
+            return;
+        }
         grecaptcha.execute();
 });
 </script>
