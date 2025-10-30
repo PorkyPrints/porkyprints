@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
@@ -50,13 +51,12 @@
 
   <section id="pricing" class="about">
     <h2>Pricing</h2>
-    <p><b>A4 Pages: </b>1 for €7, 2 for €12</p>
-    <p><b>A3 Pages: </b>1 for €10, 2 for €17</p>
-    <p><b>A4 + A3: </b>€15</p>
+    <p><b>Custom Design: </b>€5</p></br>
+    <p><b>A4 Pages: </b>€1.50 per page if you have purchased a custom design with your order. €2 once-off fee PLUS €1.50 per page if ordering a pre-made design.</p></br>
+    <p><b>A3 Pages: </b>€2 per page if you have purchased a custom design with your order. €2 once-off fee PLUS €2 per page if ordering a pre-made design.</p></br>
+    <p><b>A4 + A3: </b>€3 if you have purchased a custom design with your order. €5 if ordering pre-made designs.</p>
     </br></br>
     <p>Mini Companies get a 15% discount by default, but it can be negotiated on large orders.</p>
-    <p>If you are ordering in bulk, the price can be negotiated!</p>
-    <p>Discounts may apply if you are purchasing a pre-made poster.</p>
   </section>
 
   <section class="socials">
@@ -69,18 +69,30 @@
 
   <section id="contact" class="contact">
     <h2>Contact Us</h2>
-    <form action="mailto:porkyprintsie@gmail.com" method="post" enctype="text/plain">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email (School-Assigned Email If Possible)" required />
-      <input type="text" name="class" placeholder="Your Class (If you attend St. Declans. For example, 4C)" />
+    <form id="contact-form">
+      <input type="text" name="from_name" placeholder="Your Name" required />
+      <input type="email" name="reply_to" placeholder="Your Email (School-Assigned Email If Possible)" required />
+      <input type="text" name="student_class" placeholder="Your Class (If you attend St. Declans. For example, 4C)" />
       <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
+      <button
+          class="g-recaptcha"
+          data-sitekey="6LeMtfsrAAAAADMBHnf1-vdWDjXT2sivXUaYKvUm"
+          data-callback="onReCaptchaSuccess"
+          data-size="invisible"
+          type="submit">
+          Send Message
+      </button>
     </form>
   </section>
 
   <footer>
     <p>© 2025 Porky Prints</p>
   </footer>
+
+  <script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@latest/dist/email.min.js">
+</script>
 
 </body>
 </html>

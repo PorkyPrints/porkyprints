@@ -28,3 +28,40 @@ window.addEventListener("load", () => {
         }
     };
 });
+
+const PUBLIC_KEY   = 'QnYfEWY17CMN2jitT';
+const SERVICE_ID = 'service_fo2bfuv';
+const TEMPLATE_ID = 'template_eowb0b3';
+
+emailjs.init(PUBLIC_KEY);
+
+// Called by reCAPTCHA after success
+function onReCaptchaSuccess(token) {
+    const form = document.getElementById("contact-form");
+    const submitBtn = form.querySelector("button[type='submit']");
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending…";
+
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form, PUBLIC_KEY)
+    .then(() => {
+        form.reset();
+        grecaptcha.reset();
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send Message";
+    })
+    .catch((err) => {
+        console.error("EmailJS error:", err);
+        alert("There was an error sending your message.");
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send Message";
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contact-form");
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        grecaptcha.execute();
+});
+</script>
