@@ -70,4 +70,4 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         grecaptcha.execute();
 });
-</script>
+}
