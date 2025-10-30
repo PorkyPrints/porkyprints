@@ -35,7 +35,6 @@ const TEMPLATE_ID = 'template_eowb0b3';
 
 emailjs.init(PUBLIC_KEY);
 
-// Called by reCAPTCHA after success
 window.onReCaptchaSuccess = function (token) {
     const form = document.getElementById("contact-form");
     const submitBtn = form.querySelector("button[type='submit']");
@@ -56,18 +55,25 @@ window.onReCaptchaSuccess = function (token) {
         submitBtn.disabled = false;
         submitBtn.textContent = "Send Message";
     });
-}
+};
 
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("contact-form");
+
     form.addEventListener("submit", (e) => {
         e.preventDefault();
-        // GDPR consent check
+
+        if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+        }
+
         const consent = document.getElementById("gdpr-consent");
-        if (!consent.checked) {
+        if (consent && !consent.checked) {
             alert("Please confirm that you consent to data processing before sending.");
             return;
         }
+
         grecaptcha.execute();
+    });
 });
-})
