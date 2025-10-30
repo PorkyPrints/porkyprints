@@ -36,7 +36,7 @@ const TEMPLATE_ID = 'template_eowb0b3';
 emailjs.init(PUBLIC_KEY);
 
 // Called by reCAPTCHA after success
-function onReCaptchaSuccess(token) {
+window.onReCaptchaSuccess = function (token) {
     const form = document.getElementById("contact-form");
     const submitBtn = form.querySelector("button[type='submit']");
 
