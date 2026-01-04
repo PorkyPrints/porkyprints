@@ -6,6 +6,7 @@
   <title>Porky Prints IE</title>
   <link rel="stylesheet" href="style.css" />
   <script src="script.js" defer></script>
+  <script src="viewer.js" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -17,6 +18,7 @@
     </div>
     <nav>
       <a href="https://porkyprints.com">Home</a>
+      <a href="index.html#pay">Pay</a>
       <a href="index.html#pricing">Pricing</a>
       <a href="posters" class="active">Gallery</a>
       <a href="index.html#contact">Contact</a>
@@ -46,6 +48,19 @@
   <footer>
     <p>© 2025 Porky Prints</p>
   </footer>
+
+<!-- Image Viewer Overlay -->
+<div id="image-viewer" aria-hidden="true">
+  <button id="viewer-close" aria-label="Close (Esc)">&times;</button>
+
+  <button id="viewer-prev" class="viewer-nav" aria-label="Previous (Left)">&larr;</button>
+  <button id="viewer-next" class="viewer-nav" aria-label="Next (Right)">&rarr;</button>
+
+  <div id="viewer-container" role="presentation">
+    <img id="viewer-image" src="" alt="">
+  </div>
+  <div id="viewer-caption" aria-live="polite"></div>
+</div>
 
 </body>
 </html>
